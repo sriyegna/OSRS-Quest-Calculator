@@ -13,9 +13,8 @@ namespace OSRS_Quests
             int number = 1;
             string name = "Cook's Assisstant";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest DemonSlayer()
@@ -23,9 +22,8 @@ namespace OSRS_Quests
             int number = 2;
             string name = "Demon Slayer";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest TheRestlessGhost()
@@ -33,9 +31,8 @@ namespace OSRS_Quests
             int number = 3;
             string name = "The Restless Ghost";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest RomeoAndJuliet()
@@ -43,9 +40,8 @@ namespace OSRS_Quests
             int number = 4;
             string name = "Romeo And Juliet";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
 
@@ -54,9 +50,8 @@ namespace OSRS_Quests
             int number = 5;
             string name = "Sheep Shearer";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest ShieldOfArrav()
@@ -64,9 +59,8 @@ namespace OSRS_Quests
             int number = 6;
             string name = "Shield Of Arrav";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest ErnestTheChicken()
@@ -74,9 +68,8 @@ namespace OSRS_Quests
             int number = 7;
             string name = "Ernest The Chicken";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest VampireSlayer()
@@ -84,9 +77,8 @@ namespace OSRS_Quests
             int number = 8;
             string name = "Vampire Slayer";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
 
@@ -95,9 +87,8 @@ namespace OSRS_Quests
             int number = 9;
             string name = "Imp Catcher";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest PriceAliRescue()
@@ -105,9 +96,8 @@ namespace OSRS_Quests
             int number = 10;
             string name = "Price Ali Rescue";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest DoricsQuest()
@@ -115,9 +105,8 @@ namespace OSRS_Quests
             int number = 11;
             string name = "Doric's Quest";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest BlackKnightsFortress()
@@ -126,12 +115,11 @@ namespace OSRS_Quests
             string name = "Black Knight's Fortress";
             List<Skill> questSkills = new List<Skill>()
             {
-                new Skill("QuestPoints", 20)
+                new Skill("QuestPoints", 12)
             };
                  //Need to add a check for quest points, and add a quest point value to each quest
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest WitchsPotion()
@@ -139,9 +127,8 @@ namespace OSRS_Quests
             int number = 13;
             string name = "Witch's Potion";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest TheKnightsSword()
@@ -150,11 +137,10 @@ namespace OSRS_Quests
             string name = "The Knight's Sword";
             List<Skill> questSkills = new List<Skill>()
             {
-                new Skill("Mining", 20)
+                new Skill("Mining", 10)
             };
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest GoblinDiplomacy()
@@ -162,9 +148,8 @@ namespace OSRS_Quests
             int number = 15;
             string name = "GoblinDiplomacy";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest PiratesTreasure()
@@ -172,9 +157,8 @@ namespace OSRS_Quests
             int number = 16;
             string name = "Pirate's Treasure";
             List<Skill> questSkills = new List<Skill>();
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
         }
 
         static public Quest DragonSlayer()
@@ -183,12 +167,64 @@ namespace OSRS_Quests
             string name = "Dragon Slayer";
             List<Skill> questSkills = new List<Skill>()
             {
-                new Skill("QuestPoints", 32),
-                new Skill("Crafting", 8)
+                new Skill("QuestPoints", 32)
             };
-            List<Boolean> boostsAllowed = new List<Boolean>();
-            List<String> requiredQuests = new List<String>();
-            return new Quest(number, name, questSkills, boostsAllowed, requiredQuests);
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
+        }
+
+        static public Quest DruidicRitual()
+        {
+            int number = 18;
+            string name = "Druidic Ritual";
+            List<Skill> questSkills = new List<Skill>();
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
+        }
+
+        static public Quest LostCity()
+        {
+            int number = 19;
+            string name = "Lost City";
+            List<Skill> questSkills = new List<Skill>()
+            {
+                new Skill("Crafting", 31),
+                new Skill("Woodcutting", 36)
+            };
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
+        }
+
+        static public Quest MerlinsCrystal()
+        {
+            int number = 21;
+            string name = "Merlin's Crystal";
+            List<Skill> questSkills = new List<Skill>();
+            List<Quest> requiredQuests = new List<Quest>();
+            return new Quest(number, name, questSkills, requiredQuests);
+        }
+
+        static public Quest HeroesQuest()
+        {
+            int number = 22;
+            string name = "Heroes' Quest";
+            List<Skill> questSkills = new List<Skill>()
+            {
+                new Skill("QuestPoints", 55),
+                new Skill("Cooking", 53, 48),
+                new Skill("Fishing", 53, 48),
+                new Skill("Herblore", 25, 20),
+                new Skill("Mining", 50, 48),
+            };
+            List<Quest> requiredQuests = new List<Quest>()
+            {
+                new Quest("Shield Of Arrav"),
+                new Quest("Lost City"),
+                new Quest("Merlin's Crystal"),
+                new Quest("Dragon Slayer"),
+                new Quest("Druidic Ritual"),
+            };
+            return new Quest(number, name, questSkills, requiredQuests);
         }
     }
 }

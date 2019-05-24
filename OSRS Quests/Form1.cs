@@ -44,10 +44,14 @@ namespace OSRS_Quests
             questList.Add(Quests.GoblinDiplomacy());
             questList.Add(Quests.PiratesTreasure());
             questList.Add(Quests.DragonSlayer());
+            questList.Add(Quests.DruidicRitual());
+            questList.Add(Quests.LostCity());
+            questList.Add(Quests.MerlinsCrystal());
+            questList.Add(Quests.HeroesQuest());
 
             foreach (Quest q in questList)
             {
-                questListBox.Items.Add(q.questName);
+                questListView.Items.Add(q.questName);
             }
 
         }
@@ -55,7 +59,9 @@ namespace OSRS_Quests
         private void btn_Username_Click(object sender, EventArgs e)
         {
             string userName = text_Username.Text;
-            string jsons = new WebClient().DownloadString("https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + userName);
+            //string jsons = new WebClient().DownloadString("https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + userName);
+            string jsons = "342793,1575,20842879\n453964,76,1441578\n426128,76,1363199\n459881,85,3420041\n571975,81,2323144\n642308,78,1702374\n270235,70,805726\n643569,75,1285777\n607804,70,743706\n635058,66,518159\n357146,75,1248070\n573522,65,479622\n467415,66,505405\n346822,70,746261\n256403,70,770502\n288972,70,771095\n429146,57,213085\n423140,66,533771\n298486,61,312060\n474357,69,714890\n355338,61,312989\n219924,58,235335\n406201,60,291332\n493355,50,104758\n-1,-1\n-1,-1\n-1,-1\n394806,20\n-1,-1\n-1,-1\n-1,-1\n234290,20\n-1,-1\n-1,-1";
+            //Console.WriteLine(jsons);
             string[] splitstring = jsons.Split('\n');
 
             string[] listOfSkills = { "Total", "Attack", "Defence", "Strength", "Hitpoints", "Ranged", "Prayer", "Magic", "Cooking", "Woodcutting", "Fletching", "Fishing", "Firemaking", "Crafting", "Smithing", "Mining", "Herblore", "Agility", "Thieving", "Slayer", "Farming", "Runecraft", "Hunter", "Construction" };
@@ -76,52 +82,146 @@ namespace OSRS_Quests
             }
         }
 
-        private void questListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void whiteOutListView()
         {
-            if (questListBox.SelectedItems != null)
+            foreach (ListViewItem questListViewString in questListView.Items)
             {
-                MessageBox.Show(questListBox.SelectedItem.ToString());
+                if (!(isQuestCompleted(questListViewString.Text)))
+                {
+                    questListViewString.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void changeColour(string questName, Color colour)
+        {
+            foreach (ListViewItem questListViewString in questListView.Items)
+            {
+                if (questListViewString.Text == questName)
+                {
+                    questListViewString.BackColor = colour;
+                }
+            }
+        }
+
+        private bool isQuestCompleted(string questName)
+        {
+            foreach (Quest q in questList)
+            {
+                if (q.questName == questName)
+                {
+                    return q.completed;
+                }
+            }
+            return false;
+        }
+
+        private string determineSkillEligibility(Quest quest)
+        {
+            string eligible = "true";
+            foreach (Skill s in quest.questSkills)
+            {
+                //Find the players skill Object
+                foreach (Skill sk in osrsPlayer.playerSkills)
+                {
+                    if (sk.skillName == s.skillName)
+                    {
+                        //Console.WriteLine(s.skillName + " " + s.level + " sk " + sk.skillName + " " + sk.level);
+                        if (sk.level < s.level)
+                        {
+                            if (s.boostlevel < s.level)
+                            {
+                                eligible = "false";
+                            }
+                            else
+                            {
+                                eligible = "boost";
+                            }
+
+                        }
+                    }
+                }
+            }
+            return eligible;
+        }
+
+        private bool determineQuestEligibility(Quest quest)
+        {
+            foreach (Quest q in quest.requiredQuests)
+            {
+                foreach (Quest qu in questList)
+                {
+                    // Console.WriteLine("Comparing " + q.questName + " and " + qu.questName);
+                    if (q.questName == qu.questName)
+                    {
+                        if (qu.completed == false)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        private void determineEligibleQuests()
+        {
+            foreach (ListViewItem questListViewString in questListView.Items)
+            {
+                //Console.WriteLine("TOString" + questListViewString.Text);
+                //Find the Quest Object
+
+                if (!(isQuestCompleted(questListViewString.Text))) {
+                    Quest quest = new Quest(questListViewString.Text);
+                    foreach (Quest q in questList)
+                    {
+                        if (q.questName == questListViewString.Text)
+                        {
+                            quest = q;
+                        }
+                    }
+
+                    //Check levels
+                    bool playerSkillEligible = true;
+                    bool boostRequired = false;
+                    string result = determineSkillEligibility(quest);
+                    if (result == "false")
+                    {
+                        playerSkillEligible = false;
+                    }
+                    else if (result == "boost")
+                    {
+                        boostRequired = true;
+                    }
+                    
+
+
+                    //Check quests
+                    bool playerQuestEligible = determineQuestEligibility(quest);
+
+                    if (playerSkillEligible && playerQuestEligible && boostRequired)
+                    {
+                        //set colour to orange
+                        changeColour(questListViewString.Text, Color.Orange);
+                    }
+                    else if (playerSkillEligible && playerQuestEligible)
+                    {
+                        //set colour to yellow
+                        changeColour(questListViewString.Text, Color.Yellow);
+                    }
+                    Console.WriteLine(questListViewString.Text + " " + playerSkillEligible + " boost: " + boostRequired + " quest elig " + playerQuestEligible);
+                }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Fix thsi with an update method to avoid duplicate skills
             osrsPlayer.playerSkills.Add( new Skill("QuestPoints", Convert.ToInt32(text_QuestPoints.Text)));
 
-            foreach (object questListBoxString in questListBox.Items)
-            {
-                Console.WriteLine(questListBoxString.ToString());
-                //Find the Quest Object
-                Quest quest = new Quest(questListBoxString.ToString());
-                foreach (Quest q in questList)
-                {
-                    if (q.questName == questListBoxString.ToString())
-                    {
-                        quest = q;
-                    }
-                }
+            whiteOutListView();
 
-                //Check levels
-                Boolean playerSkillEligible = true;
-                foreach (Skill s in quest.questSkills)
-                {
-                    //Find the players skill Object
-                    foreach (Skill sk in osrsPlayer.playerSkills)
-                    {
-                        if (sk.skillName == s.skillName)
-                        {
-                            Console.WriteLine(s.skillName + " " + s.level + " sk " + sk.skillName + " " + sk.level);
-                            if (sk.level < s.level)
-                            {
-                                playerSkillEligible = false;
-                            }
-                        }
-                    }
-                }
-                Console.WriteLine(questListBoxString.ToString() + " " + playerSkillEligible);
-
-                //Check quests
-            }
+            determineEligibleQuests();
         }
 
         private void text_Attack_TextChanged(object sender, EventArgs e)
@@ -137,6 +237,73 @@ namespace OSRS_Quests
         private void text_Hitpoints_TextChanged(object sender, EventArgs e)
         {
             osrsPlayer.updateSkillLevel("Hitpoints", Convert.ToInt32(text_Hitpoints.Text));
+        }
+
+        private void text_Username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void questListView_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            //MessageBox.Show(questListView.SelectedItem.ToString());
+
+            if (questListView.SelectedItems.Count > 0)
+            {
+                var txt = questListView.SelectedItems[0].Text;
+                Console.WriteLine(txt);
+
+                foreach (Quest q in questList)
+                {
+                    if (q.questName == txt)
+                    {
+                        if (q.completed == false)
+                        {
+                            q.completed = true;
+                            questListView.SelectedItems[0].BackColor = Color.Green;
+                            Console.WriteLine("Mark as completed " + q.completed);
+                        }
+                        else
+                        {
+                            q.completed = false;
+                            foreach(Quest qu in questList)
+                            {
+                                if (q.questName == qu.questName)
+                                {
+                                    //Check skills
+                                    bool playerSkillEligible = true;
+                                    bool boostRequired = false;
+                                    string result = determineSkillEligibility(qu);
+                                    if (result == "false")
+                                    {
+                                        playerSkillEligible = false;
+                                    }
+                                    else if (result == "boost")
+                                    {
+                                        boostRequired = true;
+                                    }
+
+                                    bool questEligible = determineQuestEligibility(qu);
+
+                                    if (playerSkillEligible && boostRequired && questEligible)
+                                    {
+                                        questListView.SelectedItems[0].BackColor = Color.Orange;
+                                    }
+                                    else if (playerSkillEligible && questEligible)
+                                    {
+                                        questListView.SelectedItems[0].BackColor = Color.Yellow;
+                                    }
+                                    else
+                                    {
+                                        questListView.SelectedItems[0].BackColor = Color.Red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
         }
     }
 }

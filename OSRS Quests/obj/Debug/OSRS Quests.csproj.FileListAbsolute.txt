@@ -26,3 +26,31 @@ C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Q
 C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.CopyComplete
 C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.exe
 C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.pdb
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.exe.config
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.exe
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.pdb
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\Newtonsoft.Json.dll
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\Newtonsoft.Json.pdb
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\Newtonsoft.Json.xml
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csprojAssemblyReference.cache
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS_Quests.Form1.resources
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS_Quests.Properties.Resources.resources
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.GenerateResource.cache
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.CoreCompileInputs.cache
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.CopyComplete
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.exe
+F:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.pdb
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.exe.config
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.exe
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.pdb
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\Newtonsoft.Json.dll
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\Newtonsoft.Json.pdb
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\Newtonsoft.Json.xml
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csprojAssemblyReference.cache
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS_Quests.Form1.resources
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS_Quests.Properties.Resources.resources
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.GenerateResource.cache
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.CoreCompileInputs.cache
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.CopyComplete
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.exe
+E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.pdb

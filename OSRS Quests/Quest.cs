@@ -11,16 +11,16 @@ namespace OSRS_Quests
         public int questNumber;
         public string questName { get; set; }
         public List<Skill> questSkills = new List<Skill>();
-        public List<Boolean> boostsAllowed = new List<Boolean>();
-        public List<String> requiredQuests = new List<String>();
+        public List<Quest> requiredQuests = new List<Quest>();
+        public bool completed {get; set;}
 
-        public Quest(int num, string Name, List<Skill> questSkills, List<Boolean> boostsAllowed, List<String> requiredQuests)
+        public Quest(int num, string Name, List<Skill> questSkills, List<Quest> requiredQuests)
         {
             this.questNumber = num;
             this.questName = Name;
             this.questSkills = questSkills;
-            this.boostsAllowed = boostsAllowed;
             this.requiredQuests = requiredQuests;
+            this.completed = false;
         }
 
         public Quest(string Name)

@@ -12,6 +12,7 @@ namespace OSRS_Quests
         public int rank { get; set; }
         public int level { get; set; }
         public int experience { get; set; }
+        public int boostlevel = 0;
 
         public Skill(string skillName, int rank, int level, int experience)
         {
@@ -25,6 +26,13 @@ namespace OSRS_Quests
         {
             this.skillName = skillName;
             this.level = level;
+        }
+
+        public Skill(string skillName, int level, int boostlevel)
+        {
+            this.skillName = skillName;
+            this.level = level;
+            this.boostlevel = boostlevel;
         }
     }
 }

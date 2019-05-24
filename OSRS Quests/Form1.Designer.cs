@@ -77,9 +77,9 @@
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.text_Username = new System.Windows.Forms.TextBox();
             this.btn_Username = new System.Windows.Forms.Button();
-            this.questListBox = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.text_QuestPoints = new System.Windows.Forms.TextBox();
+            this.questListView = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -508,6 +508,7 @@
             this.text_Username.Name = "text_Username";
             this.text_Username.Size = new System.Drawing.Size(113, 20);
             this.text_Username.TabIndex = 52;
+            this.text_Username.TextChanged += new System.EventHandler(this.text_Username_TextChanged);
             // 
             // btn_Username
             // 
@@ -518,15 +519,6 @@
             this.btn_Username.Text = "Lookup";
             this.btn_Username.UseVisualStyleBackColor = true;
             this.btn_Username.Click += new System.EventHandler(this.btn_Username_Click);
-            // 
-            // questListBox
-            // 
-            this.questListBox.FormattingEnabled = true;
-            this.questListBox.Location = new System.Drawing.Point(256, 36);
-            this.questListBox.Name = "questListBox";
-            this.questListBox.Size = new System.Drawing.Size(596, 537);
-            this.questListBox.TabIndex = 54;
-            this.questListBox.SelectedIndexChanged += new System.EventHandler(this.questListBox_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -545,6 +537,19 @@
             this.text_QuestPoints.Size = new System.Drawing.Size(28, 20);
             this.text_QuestPoints.TabIndex = 56;
             // 
+            // questListView
+            // 
+            this.questListView.Alignment = System.Windows.Forms.ListViewAlignment.Left;
+            this.questListView.FullRowSelect = true;
+            this.questListView.Location = new System.Drawing.Point(256, 36);
+            this.questListView.MultiSelect = false;
+            this.questListView.Name = "questListView";
+            this.questListView.Size = new System.Drawing.Size(596, 537);
+            this.questListView.TabIndex = 57;
+            this.questListView.UseCompatibleStateImageBehavior = false;
+            this.questListView.View = System.Windows.Forms.View.List;
+            this.questListView.SelectedIndexChanged += new System.EventHandler(this.questListView_SelectedIndexChanged_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,7 +557,7 @@
             this.ClientSize = new System.Drawing.Size(895, 605);
             this.Controls.Add(this.text_QuestPoints);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.questListBox);
+            this.Controls.Add(this.questListView);
             this.Controls.Add(this.btn_Username);
             this.Controls.Add(this.text_Username);
             this.Controls.Add(this.pictureBox18);
@@ -681,9 +686,9 @@
         private System.Windows.Forms.PictureBox pictureBox24;
         private System.Windows.Forms.TextBox text_Username;
         private System.Windows.Forms.Button btn_Username;
-        private System.Windows.Forms.ListBox questListBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox text_QuestPoints;
+        private System.Windows.Forms.ListView questListView;
     }
 }
 
