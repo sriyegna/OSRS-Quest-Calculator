@@ -20,5 +20,11 @@ namespace OSRS_Quests
             this.level = level;
             this.experience = experience;
         }
+
+        public Skill(string skillName, int level)
+        {
+            this.skillName = skillName;
+            this.level = level;
+        }
     }
 }

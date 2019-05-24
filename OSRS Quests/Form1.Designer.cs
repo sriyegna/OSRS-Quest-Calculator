@@ -77,7 +77,9 @@
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.text_Username = new System.Windows.Forms.TextBox();
             this.btn_Username = new System.Windows.Forms.Button();
-            this.questList = new System.Windows.Forms.ListBox();
+            this.questListBox = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.text_QuestPoints = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -109,6 +111,7 @@
             this.text_Attack.Name = "text_Attack";
             this.text_Attack.Size = new System.Drawing.Size(27, 20);
             this.text_Attack.TabIndex = 0;
+            this.text_Attack.TextChanged += new System.EventHandler(this.text_Attack_TextChanged);
             // 
             // text_Hitpoints
             // 
@@ -116,6 +119,7 @@
             this.text_Hitpoints.Name = "text_Hitpoints";
             this.text_Hitpoints.Size = new System.Drawing.Size(27, 20);
             this.text_Hitpoints.TabIndex = 1;
+            this.text_Hitpoints.TextChanged += new System.EventHandler(this.text_Hitpoints_TextChanged);
             // 
             // text_Mining
             // 
@@ -256,6 +260,7 @@
             this.text_Crafting.Name = "text_Crafting";
             this.text_Crafting.Size = new System.Drawing.Size(27, 20);
             this.text_Crafting.TabIndex = 17;
+            this.text_Crafting.TextChanged += new System.EventHandler(this.text_Crafting_TextChanged);
             // 
             // text_Prayer
             // 
@@ -514,20 +519,40 @@
             this.btn_Username.UseVisualStyleBackColor = true;
             this.btn_Username.Click += new System.EventHandler(this.btn_Username_Click);
             // 
-            // questList
+            // questListBox
             // 
-            this.questList.FormattingEnabled = true;
-            this.questList.Location = new System.Drawing.Point(224, 80);
-            this.questList.Name = "questList";
-            this.questList.Size = new System.Drawing.Size(659, 511);
-            this.questList.TabIndex = 54;
+            this.questListBox.FormattingEnabled = true;
+            this.questListBox.Location = new System.Drawing.Point(256, 36);
+            this.questListBox.Name = "questListBox";
+            this.questListBox.Size = new System.Drawing.Size(596, 537);
+            this.questListBox.TabIndex = 54;
+            this.questListBox.SelectedIndexChanged += new System.EventHandler(this.questListBox_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(35, 467);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 55;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // text_QuestPoints
+            // 
+            this.text_QuestPoints.Location = new System.Drawing.Point(153, 332);
+            this.text_QuestPoints.Name = "text_QuestPoints";
+            this.text_QuestPoints.Size = new System.Drawing.Size(28, 20);
+            this.text_QuestPoints.TabIndex = 56;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 605);
-            this.Controls.Add(this.questList);
+            this.Controls.Add(this.text_QuestPoints);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.questListBox);
             this.Controls.Add(this.btn_Username);
             this.Controls.Add(this.text_Username);
             this.Controls.Add(this.pictureBox18);
@@ -656,7 +681,9 @@
         private System.Windows.Forms.PictureBox pictureBox24;
         private System.Windows.Forms.TextBox text_Username;
         private System.Windows.Forms.Button btn_Username;
-        private System.Windows.Forms.ListBox questList;
+        private System.Windows.Forms.ListBox questListBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox text_QuestPoints;
     }
 }
 

@@ -12,3 +12,17 @@ C:\Users\Sri\source\repos\OSRS Quests\OSRS Quests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Sri\source\repos\OSRS Quests\OSRS Quests\obj\Debug\OSRS Quests.csproj.CopyComplete
 C:\Users\Sri\source\repos\OSRS Quests\OSRS Quests\obj\Debug\OSRS Quests.exe
 C:\Users\Sri\source\repos\OSRS Quests\OSRS Quests\obj\Debug\OSRS Quests.pdb
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.exe.config
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.exe
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.pdb
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csprojAssemblyReference.cache
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS_Quests.Form1.resources
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS_Quests.Properties.Resources.resources
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.GenerateResource.cache
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.CoreCompileInputs.cache
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.CopyComplete
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.exe
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.pdb

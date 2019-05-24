@@ -11,5 +11,18 @@ namespace OSRS_Quests
         public string userID;
         public List<Skill> playerSkills = new List<Skill>();
         public List<Quest> playerQuests = new List<Quest>();
+        public int questPoints = 0;
+
+        public void updateSkillLevel(string skillName, int level)
+        {
+            foreach (Skill s in this.playerSkills)
+            {
+                if (s.skillName == skillName)
+                {
+                    s.level = level;
+                }
+            }
+
+        }
     }
 }
