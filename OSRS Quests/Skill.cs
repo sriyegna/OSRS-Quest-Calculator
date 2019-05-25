@@ -12,7 +12,7 @@ namespace OSRS_Quests
         public int rank { get; set; }
         public int level { get; set; }
         public int experience { get; set; }
-        public int boostlevel = 0;
+        public int boostlevel = 99;
 
         public Skill(string skillName, int rank, int level, int experience)
         {
@@ -33,6 +33,18 @@ namespace OSRS_Quests
             this.skillName = skillName;
             this.level = level;
             this.boostlevel = boostlevel;
+        }
+
+        public static int getLevel(List<Skill> skills, string skillName)
+        {
+            foreach(Skill s in skills)
+            {
+                if (s.skillName == skillName)
+                {
+                    return s.level;
+                }
+            }
+            return 0;
         }
     }
 }
