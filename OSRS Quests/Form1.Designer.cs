@@ -33,6 +33,7 @@
             this.btn_Username = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.questListView = new System.Windows.Forms.ListView();
+            this.col1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
@@ -81,7 +82,6 @@
             this.UpDown_Woodcutting = new System.Windows.Forms.NumericUpDown();
             this.UpDown_Farming = new System.Windows.Forms.NumericUpDown();
             this.UpDown_QuestPoints = new System.Windows.Forms.NumericUpDown();
-            this.col1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -177,6 +177,11 @@
             this.questListView.UseCompatibleStateImageBehavior = false;
             this.questListView.View = System.Windows.Forms.View.Details;
             this.questListView.SelectedIndexChanged += new System.EventHandler(this.questListView_SelectedIndexChanged_1);
+            // 
+            // col1
+            // 
+            this.col1.Text = "Old School Runescape Quests";
+            this.col1.Width = 350;
             // 
             // pictureBox25
             // 
@@ -618,11 +623,6 @@
             this.UpDown_QuestPoints.TabIndex = 130;
             this.UpDown_QuestPoints.ValueChanged += new System.EventHandler(this.UpDown_QuestPoints_ValueChanged);
             // 
-            // col1
-            // 
-            this.col1.Text = "Old School Runescape Quests";
-            this.col1.Width = 350;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,6 +682,7 @@
             this.Controls.Add(this.text_Username);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();

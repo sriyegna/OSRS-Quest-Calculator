@@ -55,6 +55,32 @@ namespace OSRS_Quests
             return sum;
         }
 
+        public static string determineSkillEligibility(Quest quest, Player osrsPlayer)
+        {
+
+
+            string eligible = "true";
+            Console.WriteLine(quest.questName);
+            foreach (Skill s in quest.questSkills)
+            {
+                int skillLevel = (Skill.getLevel(osrsPlayer.playerSkills, s.skillName));
+                Console.WriteLine(s.skillName + " Level : " + skillLevel);
+                if (skillLevel < s.level)
+                {
+                    if (skillLevel < s.boostlevel)
+                    {
+                        eligible = "false";
+                    }
+                    else
+                    {
+                        eligible = "boost";
+                    }
+                }
+            }
+
+            return eligible;
+        }
+
 
     }
 }
