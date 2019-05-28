@@ -2542,11 +2542,11 @@ namespace OSRS_Quests
             {
                 new Skill("Hunter", 12)
             };
-            List<Quest> requiredQuests = new List<Quest>()
+        List<Quest> requiredQuests = new List<Quest>()
             {
                 new Quest("Client Of Kourend")
             };
-            int questPointValue = 1;
+        int questPointValue = 1;
             return new Quest(number, name, questSkills, requiredQuests, questPointValue);
         }
 
@@ -2557,6 +2557,155 @@ namespace OSRS_Quests
             List<Skill> questSkills = new List<Skill>();
             List<Quest> requiredQuests = new List<Quest>();
             int questPointValue = 1;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+
+        //Mini Quests
+        static public Quest AlfredGrimhandsBarcrawl()
+        {
+            double number = 0;
+            string name = "Alfred Grimhand's Barcrawl";
+            List<Skill> questSkills = new List<Skill>();
+            List<Quest> requiredQuests = new List<Quest>();
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest ArchitecturalAlliance()
+        {
+            double number = 0;
+            string name = "Architectural Alliance";
+            List<Skill> questSkills = new List<Skill>()
+            {
+                new Skill("Crafting", 30),
+                new Skill("Mining", 42)
+            };
+            List<Quest> requiredQuests = new List<Quest>();
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest BearYourSoul()
+        {
+            double number = 0;
+            string name = "Bear Your Soul";
+            List<Skill> questSkills = new List<Skill>();
+            List<Quest> requiredQuests = new List<Quest>();
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest CurseOfTheEmptyLord()
+        {
+            double number = 0;
+            string name = "Curse Of The Empty Lord";
+            List<Skill> questSkills = new List<Skill>();
+            List<Quest> requiredQuests = new List<Quest>();
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest EnchantedKey()
+        {
+            double number = 0;
+            string name = "Enchanted Key";
+            List<Skill> questSkills = new List<Skill>();
+            List<Quest> requiredQuests = new List<Quest>(){
+                new Quest("Making History")
+            };
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest EnterTheAbyss()
+        {
+            double number = 0;
+            string name = "Enter The Abyss";
+            List<Skill> questSkills = new List<Skill>();
+            List<Quest> requiredQuests = new List<Quest>(){
+                new Quest("Rune Mysteries")
+            };
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest FamilyPest()
+        {
+            double number = 0;
+            string name = "Enter The Abyss";
+            List<Skill> questSkills = new List<Skill>();
+            List<Quest> requiredQuests = new List<Quest>(){
+                new Quest("Family Crest")
+            };
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest TheGeneralsShadow()
+        {
+            double number = 0;
+            string name = "The General's Shadow";
+            List<Skill> questSkills = new List<Skill>();
+            List<Quest> requiredQuests = new List<Quest>(){
+                new Quest("Fight Arena"),
+                new Quest("Curse Of The Empty Lord")
+            };
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest LairOfTarnRazorlor()
+        {
+            double number = 0;
+            string name = "Lair Of Tarn Razorlor";
+            List<Skill> questSkills = new List<Skill>()
+            {
+                new Skill("Slayer", 40)
+            };
+            List<Quest> requiredQuests = new List<Quest>(){
+                new Quest("Haunted Mine")
+            };
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest TheMageArena()
+        {
+            double number = 0;
+            string name = "The Mage Arena";
+            List<Skill> questSkills = new List<Skill>()
+            {
+                new Skill("Magic", 60)
+            };
+            List<Quest> requiredQuests = new List<Quest>();
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest TheMageArenaII()
+        {
+            double number = 0;
+            string name = "The Mage Arena II";
+            List<Skill> questSkills = new List<Skill>()
+            {
+                new Skill("Magic", 75)
+            };
+            List<Quest> requiredQuests = new List<Quest>();
+            int questPointValue = 0;
+            return new Quest(number, name, questSkills, requiredQuests, questPointValue);
+        }
+
+        static public Quest SkippyAndTheMogres()
+        {
+            double number = 0;
+            string name = "Skippy And The Mogres";
+            List<Skill> questSkills = new List<Skill>()
+            {
+                new Skill("Slayer", 32)
+            };
+            List<Quest> requiredQuests = new List<Quest>();
+            int questPointValue = 0;
             return new Quest(number, name, questSkills, requiredQuests, questPointValue);
         }
 
@@ -2715,9 +2864,21 @@ namespace OSRS_Quests
             questList.Add(Quests.TheForsakenTower()); //140
             questList.Add(Quests.TheAscentOfArceuus()); //141
             questList.Add(Quests.XMarksTheSpot()); //142
+            questList.Add(Quests.AlfredGrimhandsBarcrawl()); //0
+            questList.Add(Quests.ArchitecturalAlliance()); //0
+            questList.Add(Quests.BearYourSoul()); //0
+            questList.Add(Quests.CurseOfTheEmptyLord()); //0
+            questList.Add(Quests.EnchantedKey()); //0
+            questList.Add(Quests.EnterTheAbyss()); //0
+            questList.Add(Quests.FamilyPest()); //0
+            questList.Add(Quests.TheGeneralsShadow()); //0
+            questList.Add(Quests.LairOfTarnRazorlor()); //0
+            questList.Add(Quests.TheMageArena()); //0
+            questList.Add(Quests.TheMageArenaII()); //0
+            questList.Add(Quests.SkippyAndTheMogres()); //0
 
-           
-            return questList;
+
+    return questList;
 
             //questListView.Columns[0].ListView.Font = new Font(questListView.Columns[0].ListView.Font, FontStyle.Bold);
 

@@ -82,6 +82,8 @@
             this.UpDown_Woodcutting = new System.Windows.Forms.NumericUpDown();
             this.UpDown_Farming = new System.Windows.Forms.NumericUpDown();
             this.UpDown_QuestPoints = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox_Combat = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -130,6 +132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_Woodcutting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_Farming)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_QuestPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // text_Username
@@ -152,11 +155,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 467);
+            this.button1.Location = new System.Drawing.Point(96, 467);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 55;
-            this.button1.Text = "button1";
+            this.button1.Text = "Calculate!";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -172,7 +175,7 @@
             this.questListView.Location = new System.Drawing.Point(298, 36);
             this.questListView.MultiSelect = false;
             this.questListView.Name = "questListView";
-            this.questListView.Size = new System.Drawing.Size(375, 533);
+            this.questListView.Size = new System.Drawing.Size(357, 533);
             this.questListView.TabIndex = 57;
             this.questListView.UseCompatibleStateImageBehavior = false;
             this.questListView.View = System.Windows.Forms.View.Details;
@@ -623,11 +626,31 @@
             this.UpDown_QuestPoints.TabIndex = 130;
             this.UpDown_QuestPoints.ValueChanged += new System.EventHandler(this.UpDown_QuestPoints_ValueChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(96, 65);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 131;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBox_Combat
+            // 
+            this.textBox_Combat.Location = new System.Drawing.Point(128, 69);
+            this.textBox_Combat.Name = "textBox_Combat";
+            this.textBox_Combat.ReadOnly = true;
+            this.textBox_Combat.Size = new System.Drawing.Size(37, 20);
+            this.textBox_Combat.TabIndex = 132;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 605);
+            this.ClientSize = new System.Drawing.Size(675, 605);
+            this.Controls.Add(this.textBox_Combat);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.UpDown_QuestPoints);
             this.Controls.Add(this.UpDown_Farming);
             this.Controls.Add(this.UpDown_Woodcutting);
@@ -731,6 +754,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_Woodcutting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_Farming)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_QuestPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -790,6 +814,8 @@
         private System.Windows.Forms.NumericUpDown UpDown_Farming;
         private System.Windows.Forms.NumericUpDown UpDown_QuestPoints;
         private System.Windows.Forms.ColumnHeader col1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox_Combat;
     }
 }
 

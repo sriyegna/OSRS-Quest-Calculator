@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OSRS_Quests
 {
@@ -10,7 +11,6 @@ namespace OSRS_Quests
     {
         public string userID { get; set; }
         public List<Skill> playerSkills = new List<Skill>();
-        public List<Quest> playerQuests = new List<Quest>();
         public int questPoints = 0;
 
         public void updateSkillLevel(string skillName, int level)
@@ -25,7 +25,7 @@ namespace OSRS_Quests
 
         }
         
-        public int calculateCombatLevel()
+        public int calculateCombatLevel(TextBox textBox_Combat)
         {
             double defence = Skill.getLevel(playerSkills, "Defence");
             double hitpoints = Skill.getLevel(playerSkills, "Hitpoints");
@@ -39,6 +39,7 @@ namespace OSRS_Quests
             double range = 0.325 * (Math.Floor(3 * ranged / 2));
             double mage = 0.325 * (Math.Floor(3 * magic / 2));
             int final = Convert.ToInt32(Math.Floor(baseLevel + Math.Max(melee, Math.Max(range, mage))));
+            textBox_Combat.Text = final.ToString();
             return final;
         }
 

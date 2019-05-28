@@ -61,11 +61,11 @@ namespace OSRS_Quests
             //Add questpoints skill
             osrsPlayer.playerSkills.Add(new Skill("QuestPoints", Convert.ToInt32(UpDown_QuestPoints.Value)));
             //Add combat skill
-            osrsPlayer.playerSkills.Add(new Skill("Combat", osrsPlayer.calculateCombatLevel()));
+            osrsPlayer.playerSkills.Add(new Skill("Combat", osrsPlayer.calculateCombatLevel(textBox_Combat)));
 
 
             loginCompleted = true;
-            osrsPlayer.calculateCombatLevel();
+            osrsPlayer.calculateCombatLevel(textBox_Combat);
         }
 
 
@@ -150,6 +150,8 @@ namespace OSRS_Quests
 
         private void button1_Click(object sender, EventArgs e)
         {
+            loginCompleted = true;
+
             //Fix thsi with an update method to avoid duplicate skills
 
             whiteOutListView();
@@ -166,14 +168,12 @@ namespace OSRS_Quests
             if (questListView.SelectedItems.Count > 0)
             {
                 var txt = questListView.SelectedItems[0].Text;
-                Console.WriteLine(txt);
 
                 Quest q = Quest.findQuest(questList, questListView.SelectedItems[0].Text);
 
                 if (q.completed == false)
                 {
                     q.completed = true;
-                    Console.WriteLine("Mark as Completed");
                     //Activate all the prerequisites
                     foreach(Quest qu in q.requiredQuests)
                     {
@@ -183,7 +183,6 @@ namespace OSRS_Quests
                 else
                 {
                     q.completed = false;
-                    Console.WriteLine("Mark as NOT Completed");
                 }
             }
 
@@ -217,14 +216,14 @@ namespace OSRS_Quests
         private void UpDown_Attack_ValueChanged(object sender, EventArgs e)
         {
             osrsPlayer.updateSkillLevel("Attack", Convert.ToInt32(UpDown_Attack.Value));
-            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel());
+            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel(textBox_Combat));
             updateAfterLogin();
         }
 
         private void UpDown_Hitpoints_ValueChanged(object sender, EventArgs e)
         {
             osrsPlayer.updateSkillLevel("Hitpoints", Convert.ToInt32(UpDown_Hitpoints.Value));
-            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel());
+            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel(textBox_Combat));
             updateAfterLogin();
         }
 
@@ -238,7 +237,7 @@ namespace OSRS_Quests
         private void UpDown_Strength_ValueChanged(object sender, EventArgs e)
         {
             osrsPlayer.updateSkillLevel("Strength", Convert.ToInt32(UpDown_Strength.Value));
-            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel());
+            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel(textBox_Combat));
             updateAfterLogin();
         }
 
@@ -257,7 +256,7 @@ namespace OSRS_Quests
         private void UpDown_Defence_ValueChanged(object sender, EventArgs e)
         {
             osrsPlayer.updateSkillLevel("Defence", Convert.ToInt32(UpDown_Defence.Value));
-            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel());
+            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel(textBox_Combat));
             updateAfterLogin();
         }
 
@@ -276,7 +275,7 @@ namespace OSRS_Quests
         private void UpDown_Ranged_ValueChanged(object sender, EventArgs e)
         {
             osrsPlayer.updateSkillLevel("Ranged", Convert.ToInt32(UpDown_Ranged.Value));
-            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel());
+            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel(textBox_Combat));
             updateAfterLogin();
         }
 
@@ -295,7 +294,7 @@ namespace OSRS_Quests
         private void UpDown_Prayer_ValueChanged(object sender, EventArgs e)
         {
             osrsPlayer.updateSkillLevel("Prayer", Convert.ToInt32(UpDown_Prayer.Value));
-            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel());
+            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel(textBox_Combat));
             updateAfterLogin();
         }
 
@@ -314,7 +313,7 @@ namespace OSRS_Quests
         private void UpDown_Magic_ValueChanged(object sender, EventArgs e)
         {
             osrsPlayer.updateSkillLevel("Magic", Convert.ToInt32(UpDown_Magic.Value));
-            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel());
+            osrsPlayer.updateSkillLevel("Combat", osrsPlayer.calculateCombatLevel(textBox_Combat));
             updateAfterLogin();
         }
 
