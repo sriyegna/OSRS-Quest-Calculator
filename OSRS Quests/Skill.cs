@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,15 @@ namespace OSRS_Quests
 {
     class Skill
     {
+        [JsonProperty("skillName")]
         public string skillName { get; set; }
+        [JsonProperty("rank")]
         public int rank { get; set; }
+        [JsonProperty("level")]
         public int level { get; set; }
+        [JsonProperty("experience")]
         public int experience { get; set; }
+        [JsonProperty("boostlevel")]
         public int boostlevel = 99;
 
         public Skill(string skillName, int rank, int level, int experience)

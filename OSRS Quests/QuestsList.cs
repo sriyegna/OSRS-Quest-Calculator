@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -2726,99 +2725,174 @@ namespace OSRS_Quests
         static public List<Quest> generateQuestList()
         {
             List<Quest> questList = new List<Quest>();
-
-            //Read Json into dynamic object
-            dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(File.ReadAllText(@"quests.json"));
-
-            //Start manually parsing dynamic json object which is known to be a list of Quests
-            try
-            {
-                int jsonCounter = 0;
-                //while (json[jsonCounter] != null)
-                while (jsonCounter < 164)
-                //for (int jsonCounter = 0; jsonCounter < (json).Count; jsonCounter++)
-                {
-
-
-                    //QuestNumber
-                    double questNumber = json[jsonCounter].questNumber;
-
-                    //Skills
-                    List<Skill> questSkills = new List<Skill>();
-                    try
-                    {
-                        int skillCounter = 0;
-                        //while (json[jsonCounter].questSkills[skillCounter] != null)
-                        while (skillCounter < json[jsonCounter].questSkills.Count)
-                        {
-                            Console.WriteLine(json[jsonCounter].questSkills[skillCounter]);
-                            int boostlevel = json[jsonCounter].questSkills[skillCounter].boostlevel;
-                            string skillName = json[jsonCounter].questSkills[skillCounter].skillName;
-                            int level = json[jsonCounter].questSkills[skillCounter].level;
-
-                            Skill s = new Skill(skillName, level, boostlevel);
-                            questSkills.Add(s);
-                            skillCounter++;
-                        }
-                    }
-                    catch (ArgumentOutOfRangeException)
-                    {
-                        Console.WriteLine("Caught Skills");
-                    }
-
-                    //Quests
-                    List<Quest> requiredQuests = new List<Quest>();
-                    try
-                    {
-                        int questCounter = 0;
-                        //while (json[jsonCounter].requiredQuests[questCounter] != null)
-                        while (questCounter < json[jsonCounter].requiredQuests.Count)
-                        {
-                            Console.WriteLine(json[jsonCounter].requiredQuests[questCounter]);
-                            string iquestName = json[jsonCounter].requiredQuests[questCounter].questName;
-
-                            Quest qu = new Quest(iquestName);
-                            requiredQuests.Add(qu);
-                            questCounter++;
-                        }
-                    }
-                    catch (ArgumentOutOfRangeException)
-                    {
-                        Console.WriteLine("Caught Pre Req Quests");
-                    }
-
-                    //QuestName
-                    string questName = json[jsonCounter].questName;
-
-                    //Completed
-                    bool completed = json[jsonCounter].completed;
-
-                    //QuestPointValue
-                    int questPointValue = json[jsonCounter].questPointValue;
-
-
-                    //Create main quest object and add it to list
-                    Quest q = new Quest(questNumber, questName, questSkills, requiredQuests, questPointValue);
-                    questList.Add(q);
-
-                    jsonCounter++;
-                }
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                Console.WriteLine("Main Quest Caught");
-            }
-
-            Console.WriteLine(o);
+            questList.Add(Quests.CooksAssisstant()); //1
+            questList.Add(Quests.DemonSlayer()); //2
+            questList.Add(Quests.TheRestlessGhost()); //3
+            questList.Add(Quests.RomeoAndJuliet()); //4
+            questList.Add(Quests.SheepShearer()); //5
+            questList.Add(Quests.ShieldOfArrav()); //6
+            questList.Add(Quests.ErnestTheChicken()); //7
+            questList.Add(Quests.VampireSlayer()); //8
+            questList.Add(Quests.ImpCatcher()); //9
+            questList.Add(Quests.PriceAliRescue()); //10
+            questList.Add(Quests.DoricsQuest()); //11
+            questList.Add(Quests.BlackKnightsFortress()); //12
+            questList.Add(Quests.WitchsPotion()); //13
+            questList.Add(Quests.TheKnightsSword()); //14
+            questList.Add(Quests.GoblinDiplomacy()); //15
+            questList.Add(Quests.PiratesTreasure()); //16
+            questList.Add(Quests.DragonSlayer()); //17
+            questList.Add(Quests.DruidicRitual()); //18
+            questList.Add(Quests.LostCity()); //19
+            questList.Add(Quests.WitchsHouse()); //20
+            questList.Add(Quests.MerlinsCrystal()); //21
+            questList.Add(Quests.HeroesQuest()); //22
+            questList.Add(Quests.ScorpionCatcher()); //23
+            questList.Add(Quests.FamilyCrest()); //24
+            questList.Add(Quests.TribalTotem()); //25
+            questList.Add(Quests.FishingContest()); //26
+            questList.Add(Quests.MonksFriend()); //27
+            questList.Add(Quests.TempleOfIkov()); //28
+            questList.Add(Quests.ClockTower()); //29
+            questList.Add(Quests.HolyGrail()); //30
+            questList.Add(Quests.TreeGnomeVillage()); //31
+            questList.Add(Quests.FightArena()); //32
+            questList.Add(Quests.HazeelCult()); //33
+            questList.Add(Quests.SheepHerder()); //34
+            questList.Add(Quests.PlagueCity()); //35
+            questList.Add(Quests.SeaSlug()); //36
+            questList.Add(Quests.WaterfallQuest()); //37
+            questList.Add(Quests.Biohazard()); //38
+            questList.Add(Quests.JunglePotion()); //39
+            questList.Add(Quests.TheGrandTree()); //40
+            questList.Add(Quests.ShiloVillage()); //41
+            questList.Add(Quests.UndergroundPass()); //42
+            questList.Add(Quests.ObservatoryQuest()); //43
+            questList.Add(Quests.TheTouristTrap()); //44
+            questList.Add(Quests.Watchtower()); //45
+            questList.Add(Quests.DwarfCannon()); //46
+            questList.Add(Quests.MurderMystery()); //47
+            questList.Add(Quests.TheDigSite()); //48
+            questList.Add(Quests.GertrudesCat()); //49
+            questList.Add(Quests.LegendsQuest()); //50
+            questList.Add(Quests.RuneMysteries()); //51
+            questList.Add(Quests.BigChompyBirdHunting()); //52
+            questList.Add(Quests.ElementalWorkshopI()); //53
+            questList.Add(Quests.PriestInPeril()); //54
+            questList.Add(Quests.NatureSpirit()); //55
+            questList.Add(Quests.DeathPlateau()); //56
+            questList.Add(Quests.TrollStronghold()); //57
+            questList.Add(Quests.TaiBwoWannaiTrio()); //58
+            questList.Add(Quests.Regicide()); //59
+            questList.Add(Quests.EadgarsRuse()); //60
+            questList.Add(Quests.ShadesOfMortton()); //61
+            questList.Add(Quests.TheFremennikTrials()); //62
+            questList.Add(Quests.HorrorFromTheDeep()); //63
+            questList.Add(Quests.ThroneOfMiscellania()); //64
+            questList.Add(Quests.MonkeyMadnessI()); //65
+            questList.Add(Quests.HauntedMine()); //66
+            questList.Add(Quests.TrollRomance()); //67
+            questList.Add(Quests.InSearchOfTheMyreque()); //68
+            questList.Add(Quests.CreatureOfFenkenstrain()); //69
+            questList.Add(Quests.RovingElves()); //70
+            questList.Add(Quests.GhostsAhoy()); //71
+            questList.Add(Quests.OneSmallFavour()); //72
+            questList.Add(Quests.MountainDaughter()); //73
+            questList.Add(Quests.BetweenARock()); //74
+            questList.Add(Quests.TheFeud()); //75
+            questList.Add(Quests.TheGolem()); //76
+            questList.Add(Quests.DesertTreasure()); //77
+            questList.Add(Quests.IcthlarinsLittleHelper()); //78
+            questList.Add(Quests.TearsOfGuthix()); //79
+            questList.Add(Quests.ZogreFleshEaters()); //80
+            questList.Add(Quests.TheLostTribe()); //81
+            questList.Add(Quests.TheGiantDwarf()); //82
+            questList.Add(Quests.RecruitmentDrive()); //83
+            questList.Add(Quests.MourningsEndsPartI()); //84
+            questList.Add(Quests.ForgettableTale()); //85
+            questList.Add(Quests.GardenOfTranquillity()); //86
+            questList.Add(Quests.ATailOfTwoCats()); //87
+            questList.Add(Quests.Wanted()); //88
+            questList.Add(Quests.MourningsEndsPartII()); //89
+            questList.Add(Quests.RumDeal()); //90
+            questList.Add(Quests.ShadowOfTheStorm()); //91
+            questList.Add(Quests.MakingHistory()); //92
+            questList.Add(Quests.Ratcatchers()); //93
+            questList.Add(Quests.SpiritsOfTheElid()); //94
+            questList.Add(Quests.DeviousMinds()); //95
+            questList.Add(Quests.TheHandInTheSand()); //96
+            questList.Add(Quests.EnakhrasLament()); //97
+            questList.Add(Quests.CabinFever()); //98
+            questList.Add(Quests.FairyTaleIGrowingPains()); //99
+            questList.Add(Quests.RecipeForDisaster()); //100
+            questList.Add(Quests.RFD_AnotherCooksQuest()); //100.1
+            questList.Add(Quests.RFD_FreeingTheMountainDwarf()); //100.2
+            questList.Add(Quests.RFD_FreeingTheGoblinGenerals()); //100.3
+            questList.Add(Quests.RFD_FreeingPiratePete()); //100.4
+            questList.Add(Quests.RFD_FreeingTheLumbridgeGuide()); //100.5
+            questList.Add(Quests.RFD_FreeingEvilDave()); //100.6
+            questList.Add(Quests.RFD_FreeingKingAwowogei()); //100.7
+            questList.Add(Quests.RFD_FreeingSirAmikVarze()); //100.8
+            questList.Add(Quests.RFD_FreeingSkrachUglogwee()); //100.9
+            questList.Add(Quests.RFD_DefeatingTheCulinaromancer()); //100.10
+            questList.Add(Quests.InAidOfTheMyreque()); //101
+            questList.Add(Quests.ASoulsBane()); //102
+            questList.Add(Quests.RagAndBoneMan()); //103
+            questList.Add(Quests.RagAndBoneManII()); //104
+            questList.Add(Quests.SwanSong()); //105
+            questList.Add(Quests.RoyalTrouble()); //106
+            questList.Add(Quests.DeathToTheDorgeshuun()); //107
+            questList.Add(Quests.FairyTaleIICureAQueen()); //108
+            questList.Add(Quests.LunarDiplomacy()); //109
+            questList.Add(Quests.TheEyesOfGlouphrie()); //110
+            questList.Add(Quests.DarknessOfHallowvale()); //111
+            questList.Add(Quests.TheSlugMenace()); //112
+            questList.Add(Quests.ElementalWorkshopII()); //113
+            questList.Add(Quests.MyArmsBigAdventure()); //114
+            questList.Add(Quests.EnlightenedJourney()); //115
+            questList.Add(Quests.EaglesPeak()); //116
+            questList.Add(Quests.AnimalMagnetism()); //117
+            questList.Add(Quests.Contact()); //118
+            questList.Add(Quests.ColdWar()); //119
+            questList.Add(Quests.TheFremennikIsles()); //120
+            questList.Add(Quests.TowerOfLife()); //121
+            questList.Add(Quests.TheGreatBrainRobbery()); //122
+            questList.Add(Quests.WhatLiesBelow()); //123
+            questList.Add(Quests.OlafsQuest()); //124
+            questList.Add(Quests.AnotherSliceOfHAM()); //125
+            questList.Add(Quests.DreamMentor()); //126
+            questList.Add(Quests.GrimTales()); //127
+            questList.Add(Quests.KingsRansom()); //128
+            questList.Add(Quests.MonkeyMadnessII()); //129
+            questList.Add(Quests.MisthalinMystery()); //130
+            questList.Add(Quests.ClientOfKourend()); //131
+            questList.Add(Quests.BoneVoyage()); //132
+            questList.Add(Quests.TheQueenOfThieves()); //133
+            questList.Add(Quests.TheDepthsOfDespair()); //134
+            questList.Add(Quests.DragonSlayerII()); //135
+            questList.Add(Quests.TheCorsairCurse()); //136
+            questList.Add(Quests.TaleOfTheRighteous()); //137
+            questList.Add(Quests.ATasteOfHope()); //138
+            questList.Add(Quests.MakingFriendsWithMyArm()); //139
+            questList.Add(Quests.TheForsakenTower()); //140
+            questList.Add(Quests.TheAscentOfArceuus()); //141
+            questList.Add(Quests.XMarksTheSpot()); //142
+            questList.Add(Quests.AlfredGrimhandsBarcrawl()); //0
+            questList.Add(Quests.ArchitecturalAlliance()); //0
+            questList.Add(Quests.BearYourSoul()); //0
+            questList.Add(Quests.CurseOfTheEmptyLord()); //0
+            questList.Add(Quests.EnchantedKey()); //0
+            questList.Add(Quests.EnterTheAbyss()); //0
+            questList.Add(Quests.FamilyPest()); //0
+            questList.Add(Quests.TheGeneralsShadow()); //0
+            questList.Add(Quests.LairOfTarnRazorlor()); //0
+            questList.Add(Quests.TheMageArena()); //0
+            questList.Add(Quests.TheMageArenaII()); //0
+            questList.Add(Quests.SkippyAndTheMogres()); //0
+          
+            File.WriteAllText(@"quests.json", JsonConvert.SerializeObject(questList));
 
             return questList;
-
-
-            //File.WriteAllText(@"quests.json", JsonConvert.SerializeObject(questList));
-
-            //return questList;
-
-
         }
 
     }

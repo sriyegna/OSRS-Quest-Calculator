@@ -32,14 +32,13 @@ namespace OSRS_Quests
                 questListView.Items.Add(q.questName);
             }
         }
-        
+
 
         private void btn_Username_Click(object sender, EventArgs e)
         {
             string userName = text_Username.Text;
-            //string jsons = new WebClient().DownloadString("https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + userName);
-            string jsons = "342793,1575,20842879\n453964,76,1441578\n426128,76,1363199\n459881,85,3420041\n571975,81,2323144\n642308,78,1702374\n270235,70,805726\n643569,75,1285777\n607804,70,743706\n635058,66,518159\n357146,75,1248070\n573522,65,479622\n467415,66,505405\n346822,70,746261\n256403,70,770502\n288972,70,771095\n429146,57,213085\n423140,66,533771\n298486,61,312060\n474357,69,714890\n355338,61,312989\n219924,58,235335\n406201,60,291332\n493355,50,104758\n-1,-1\n-1,-1\n-1,-1\n394806,20\n-1,-1\n-1,-1\n-1,-1\n234290,20\n-1,-1\n-1,-1";
-            //Console.WriteLine(jsons);
+            string jsons = new WebClient().DownloadString("https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + userName);
+            //string jsons = "342793,1575,20842879\n453964,76,1441578\n426128,76,1363199\n459881,85,3420041\n571975,81,2323144\n642308,78,1702374\n270235,70,805726\n643569,75,1285777\n607804,70,743706\n635058,66,518159\n357146,75,1248070\n573522,65,479622\n467415,66,505405\n346822,70,746261\n256403,70,770502\n288972,70,771095\n429146,57,213085\n423140,66,533771\n298486,61,312060\n474357,69,714890\n355338,61,312989\n219924,58,235335\n406201,60,291332\n493355,50,104758\n-1,-1\n-1,-1\n-1,-1\n394806,20\n-1,-1\n-1,-1\n-1,-1\n234290,20\n-1,-1\n-1,-1";
             string[] splitstring = jsons.Split('\n');
 
             string[] listOfSkills = { "Total", "Attack", "Defence", "Strength", "Hitpoints", "Ranged", "Prayer", "Magic", "Cooking", "Woodcutting", "Fletching", "Fishing", "Firemaking", "Crafting", "Smithing", "Mining", "Herblore", "Agility", "Thieving", "Slayer", "Farming", "Runecraft", "Hunter", "Construction" };
@@ -92,7 +91,7 @@ namespace OSRS_Quests
             }
         }
 
-        
+
 
         private bool determineQuestEligibility(Quest quest)
         {
@@ -152,18 +151,15 @@ namespace OSRS_Quests
         {
             loginCompleted = true;
 
-            //Fix thsi with an update method to avoid duplicate skills
 
             whiteOutListView();
 
-            //determineEligibleQuests();
 
             updateQuestColours();
         }
 
         private void questListView_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //MessageBox.Show(questListView.SelectedItem.ToString());
 
             if (questListView.SelectedItems.Count > 0)
             {
@@ -175,7 +171,7 @@ namespace OSRS_Quests
                 {
                     q.completed = true;
                     //Activate all the prerequisites
-                    foreach(Quest qu in q.requiredQuests)
+                    foreach (Quest qu in q.requiredQuests)
                     {
                         Quest.findQuest(questList, qu.questName).completed = true;
                     }
@@ -374,6 +370,16 @@ namespace OSRS_Quests
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_Help_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To use this application:\n\n1) Enter your username and click look up to automatically import your skills, or type them in manually.\n2) Enter your current quest points.\n3) Press Calculate\n4) Select quests from the list to mark them as completed, or uncompleted\n\nWhite means you are ineligible. Yellow means you are eligible, Orange means a boost is required, Green means complete.\n\n*If you toggle a quest complete, all of the prerequsites will also be toggled complete.\n*Skill Lookup only works if your skills are listed on the OSRS High Scores page.", "OSRS Quest Calculator Help", MessageBoxButtons.OK);
+        }
+
+        private void button_About_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Created by Srinath Natarajan", "About", MessageBoxButtons.OK);
         }
     }
 }

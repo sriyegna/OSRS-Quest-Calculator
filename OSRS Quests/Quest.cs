@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,11 +25,23 @@ namespace OSRS_Quests
             this.completed = false;
             this.questPointValue = questPointValue;
         }
+        [JsonConstructor]
+        public Quest(double num, string[] questSkills, string[] requiredQuests, string Name, bool completed, int questPointValue)
+        {
+            this.questNumber = num;
+            this.questName = Name;
+            Console.WriteLine(questSkills);
+            //this.questSkills = questSkills;
+            //this.requiredQuests = requiredQuests;
+            this.completed = false;
+            this.questPointValue = questPointValue;
+        }
 
         public Quest(string Name)
         {
             this.questName = Name;
         }
+       
 
         public static Quest findQuest(List<Quest> quests, string questName)
         {

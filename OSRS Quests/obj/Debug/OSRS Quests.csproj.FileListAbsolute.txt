@@ -54,3 +54,7 @@ E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests
 E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.csproj.CopyComplete
 E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.exe
 E:\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.pdb
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.exe.manifest
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\bin\Debug\OSRS Quests.application
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.exe.manifest
+C:\Users\Sri\Documents\GitHub\OSRS-Quest-Calculator\OSRS-Quest-Calculator\OSRS Quests\obj\Debug\OSRS Quests.application

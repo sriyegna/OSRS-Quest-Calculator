@@ -84,6 +84,8 @@
             this.UpDown_QuestPoints = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox_Combat = new System.Windows.Forms.TextBox();
+            this.button_Help = new System.Windows.Forms.Button();
+            this.button_About = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -155,7 +157,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(96, 467);
+            this.button1.Location = new System.Drawing.Point(90, 467);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 55;
@@ -644,11 +646,33 @@
             this.textBox_Combat.Size = new System.Drawing.Size(37, 20);
             this.textBox_Combat.TabIndex = 132;
             // 
+            // button_Help
+            // 
+            this.button_Help.Location = new System.Drawing.Point(15, 533);
+            this.button_Help.Name = "button_Help";
+            this.button_Help.Size = new System.Drawing.Size(75, 23);
+            this.button_Help.TabIndex = 133;
+            this.button_Help.Text = "Help";
+            this.button_Help.UseVisualStyleBackColor = true;
+            this.button_Help.Click += new System.EventHandler(this.button_Help_Click);
+            // 
+            // button_About
+            // 
+            this.button_About.Location = new System.Drawing.Point(181, 533);
+            this.button_About.Name = "button_About";
+            this.button_About.Size = new System.Drawing.Size(75, 23);
+            this.button_About.TabIndex = 134;
+            this.button_About.Text = "About";
+            this.button_About.UseVisualStyleBackColor = true;
+            this.button_About.Click += new System.EventHandler(this.button_About_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 605);
+            this.Controls.Add(this.button_About);
+            this.Controls.Add(this.button_Help);
             this.Controls.Add(this.textBox_Combat);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.UpDown_QuestPoints);
@@ -816,6 +840,8 @@
         private System.Windows.Forms.ColumnHeader col1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox_Combat;
+        private System.Windows.Forms.Button button_Help;
+        private System.Windows.Forms.Button button_About;
     }
 }
 
